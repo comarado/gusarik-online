@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598423361320",
+    "project_id": "gusarik-online",
+    "storage_bucket": "gusarik-online.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598423361320:android:b87ff8c2a37de19dca221d",
+        "android_client_info": {
+          "package_name": "com.gusarik.online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598423361320-sl2qqjvikhr9vqdcb5ftt9gojqpld4ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq0UgWF3DBvnE6OGh-VRuwWhh-z0imYQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598423361320-sl2qqjvikhr9vqdcb5ftt9gojqpld4ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
