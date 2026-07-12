@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Гусарик Online</string>
+    <string name="login_title">Вход</string>
+    <string name="register_title">Регистрация</string>
+    <string name="menu_play">Играть</string>
+    <string name="menu_invite">Пригласить друга</string>
+    <string name="menu_history">История партий</string>
+    <string name="menu_stats">Статистика</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="create_room">Создать комнату</string>
+    <string name="join_room">Присоединиться</string>
+    <string name="room_code">Код комнаты</string>
+    <string name="waiting_for_opponent">Ожидание соперника...</string>
+    <string name="pass">Пас</string>
+    <string name="bid">Ставка</string>
+    <string name="contract">Контракт</string>
+    <string name="trump">Козырь</string>
+    <string name="tricks">Взятки</string>
+    <string name="score">Счёт</string>
+    <string name="chat">Чат</string>
+    <string name="send">Отправить</string>
+    <string name="back">Назад</string>
+    <string name="sign_out">Выйти</string>
+    <string name="error_generic">Произошла ошибка</string>
+    <string name="error_network">Ошибка сети</string>
+    <string name="error_room_not_found">Комната не найдена</string>
+    <string name="error_room_full">Комната заполнена</string>
+</resources>
