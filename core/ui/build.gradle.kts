@@ -32,6 +32,8 @@ android {
 dependencies {
     implementation(project(":core:domain"))
 
+    implementation("androidx.core:core-ktx:1.12.0")
+
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
