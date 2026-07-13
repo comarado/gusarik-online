@@ -372,20 +372,29 @@ class GameEngine(
     /**
      * Process round completion — calculate scores.
      */
-    private fun processRoundComplete() {
+private fun processRoundComplete() {
         val state = _state.value
         val trickCounts = trickManager.getTrickCounts()
+        
+        // Извлекаем контракт в локальную переменную для безопасного смарт-каста
+        val currentContract = state.contract
 
         val roundResults = if (state.isMisere) {
-            scoringStrategy.scoreMisere(
-                state.contract!!.player,
-                trickCounts[state.contract.player] ?: 0,
-                state.scores
-            )
+            // Проверяем локальную переменную на null
+            if (currentContract != null) {
+                scoringStrategy.scoreMisere(
+                    currentContract.player,
+                    trickCounts[currentContract.player] ?: 0,
+                    state.scores
+                )
+            } else {
+                emptyList() // Фолбек на случай, если контракта почему-то нет
+            }
         } else if (state.isPassed) {
             scoringStrategy.scorePassed(trickCounts, state.scores)
         } else {
-            scoringStrategy.scoreRound(state.contract, trickCounts, state.scores)
+            // Здесь передаем уже проверенный на null currentContract
+            scoringStrategy.scoreRound(currentContract, trickCounts, state.scores)
         }
 
         // Update scores
