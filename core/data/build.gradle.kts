@@ -25,6 +25,7 @@ android {
 
 dependencies {
     implementation(project(":core:domain"))
+    implementation("com.google.firebase:firebase-storage-ktx")
 
     implementation(libs.core.ktx)
 
