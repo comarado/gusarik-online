@@ -81,13 +81,19 @@ fun GusarikTheme(
     }
 
     val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
+if (!view.isInEditMode) {
+    SideEffect {
+        val context = view.context
+        // Безопасно находим Activity, даже если контекст обернут в ContextWrapper
+        val activity = context as? Activity 
+            ?: (context as? android.content.ContextWrapper)?.baseContext as? Activity
+        
+        activity?.window?.let { window ->
             window.statusBarColor = colorScheme.primary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
+}
 
     MaterialTheme(
         colorScheme = colorScheme,
