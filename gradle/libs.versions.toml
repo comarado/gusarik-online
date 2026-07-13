@@ -20,6 +20,7 @@ datastore = "1.0.0"
 turbine = "1.0.0"
 mockk = "1.13.9"
 google-services = "4.4.2"
+ksp = "2.0.21-1.0.27"
 
 [libraries]
 # AndroidX Core
