@@ -3,20 +3,18 @@ package com.gusarik.feature.game.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gusarik.core.domain.model.*
+// Явно импортируем enum систем подсчета из домена
+import com.gusarik.core.domain.model.ScoringSystem as DomainScoringSystem
 import com.gusarik.core.domain.repository.AuthRepository
 import com.gusarik.core.domain.repository.GameRepository
 import com.gusarik.engine.game.GameEngine
 import com.gusarik.engine.scoring.ScoringFactory
-import com.gusarik.engine.scoring.ScoringSystem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-import com.gusarik.engine.scoring.ScoreType
-import com.gusarik.engine.scoring.ScoreType.BULLET
 
 data class GameUiState(
     val gameState: GameState? = null,
@@ -42,8 +40,12 @@ class GameViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
 
-    private val gameEngine = GameEngine(ScoringSystem(ScoreType.BULLET))
+    // Используем ScoringFactory для создания дефолтной стратегии BulletScoring()
+    private val gameEngine = GameEngine(ScoringFactory.create(DomainScoringSystem.BULLET))
+    
     private var roomCode: String = ""
+
+    // ... Весь остальной код GameViewModel остается без изменений
 
     fun initializeGame(roomCode: String) {
         this.roomCode = roomCode
