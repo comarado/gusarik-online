@@ -14,7 +14,7 @@ enum class ScoreType {
 }
 
 @Singleton
-class ScoringSystem @Inject constructor() {
+class ScoringSystem @Inject constructor(val scoreType: ScoreType = ScoreType.BULLET) {
 
     private val _currentScore = MutableStateFlow(0)
     val currentScore: StateFlow<Int> = _currentScore.asStateFlow()
