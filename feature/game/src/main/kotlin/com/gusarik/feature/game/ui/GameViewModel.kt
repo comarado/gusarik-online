@@ -14,7 +14,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.gusarik.engine.scoring.model.ScoreType.BULLET
+import com.gusarik.engine.scoring.ScoringSystem
+import com.gusarik.engine.scoring.ScoreType
+import com.gusarik.engine.scoring.ScoreType.BULLET
 
 data class GameUiState(
     val gameState: GameState? = null,
