@@ -42,8 +42,8 @@ class GameViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
 
-    private val gameEngine = GameEngine(ScoringSystem(ScoreType.BULLET))
-    // private val gameEngine = GameEngine(ScoringFactory.create(ScoreType.BULLET))
+    // private val gameEngine = GameEngine(ScoringSystem(ScoreType.BULLET))
+    private val gameEngine = GameEngine(ScoringFactory.create(ScoreType.BULLET))
     private var roomCode: String = ""
 
     fun initializeGame(roomCode: String) {
